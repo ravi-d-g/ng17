@@ -1,5 +1,6 @@
 {
   "routes": [
-    "/"
+    "/deferrable-views",
+    "/home"
   ]
 }
