@@ -1,0 +1,22 @@
+<p>deferrable-views works!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="flex-container">
+        @for (item of this.cardList;track item.title) { @defer (on hover){
+
+        <app-product-details
+          [item]="item"
+          class="flex-item"
+        ></app-product-details>
+
+        } @placeholder {
+        <mat-card class="example-card" style="width: 320px; height: 100px">
+        </mat-card>
+
+        }}
+      </div>
+    </div>
+  </div>
+</div>
