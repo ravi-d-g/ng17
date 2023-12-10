@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "dist/ng17",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -104,6 +104,6 @@
     }
   },
   "cli": {
-    "analytics": "05d22d42-8734-4c4f-9ccb-c4d11a8ab8cc"
+    "analytics": false
   }
 }
