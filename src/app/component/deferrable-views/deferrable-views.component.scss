@@ -2,9 +2,7 @@
     display: flex;
 }
 
-.flex-item {
-    margin: 5px;
-}
+.flex-item {}
 
 .example-spacer {
     flex: 1 1 auto;
@@ -17,4 +15,29 @@ a.link.active {
 a.link {
     text-decoration: none;
     color: black;
+}
+
+.card-placeholder {
+
+    width: 300px;
+    height: 463px;
+    box-shadow: 0px 1px 3px 2px #aaa;
+    border-radius: 4px;
+    margin: 5px;
+    text-align: center;
+    background: #fff;
+    display: flex;
+
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.on-all {
+    // border: 1px solid;
+    height: 50px;
+}
+
+.code::before {
+    content: '@';
 }

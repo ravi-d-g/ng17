@@ -1,22 +1,238 @@
-<p>deferrable-views works!</p>
+<div class="container-xl">
+  <h1 class="mt-3"> Deferrable Views </h1>
+  <h3>Overview</h3>
+  <p>
 
-<div class="container">
+    Deferrable views can be used in component template to <span class="code">defer</span> the loading of select
+    dependencies within that template.
+    Those dependencies include components, directives, and pipes, and any associated CSS. To use this feature, you can
+    declaratively wrap a section of your template in a
+    <code><a href="api/core/defer" class="code-anchor code">defer</a></code> block which specifies the loading
+    conditions.
+
+    Deferrable views support a series of triggers, prefetching, and several sub blocks used for placeholder, loading,
+    and error state management. You can also create custom conditions with when and prefetch when.
+  </p>
+  <h3> Why use Deferrable Views?</h3>
+  <p>
+
+    Deferrable views, also known as <span class="code">defer</span> blocks, are a powerful tool that can be used to
+    reduce the initial bundle
+    size of your application or <span class="code">defer</span> heavy components that may not ever be loaded until a
+    later time. This should
+    result in a faster initial load and an improvement in your Core Web Vitals (CWV) results. Deferring some of your
+    components until later should specifically improve Largest Contentful Paint (LCP) and Time to First Byte (TTFB).
+
+    Note: It is highly recommended that any <span class="code">defer</span> loaded component that might result in layout
+    shift once the
+    dependencies have loaded be below the fold or otherwise not yet visible to the user.
+  </p>
+  <h3>
+    Which dependencies are defer-loadable?
+  </h3>
+  <p>
+
+    In order for dependencies within a <span class="code">defer</span> block to be deferred, they need to meet two
+    conditions:
+  </p>
+  <ol>
+    <li>
+      They must be standalone. Non-standalone dependencies cannot be deferred and will still be eagerly loaded, even
+      inside of <span class="code">defer</span> blocks.
+    </li>
+    <li>
+      They must not be directly referenced from the same file, outside of <span class="code">defer</span> blocks; this
+      includes ViewChild queries.
+
+    </li>
+  </ol>
+
+  <p>
+
+    Transitive dependencies of the components, directives, and pipes used in the <span class="code">defer</span> block
+    can be standalone or
+    NgModule based and will still be deferred.
+  </p>
+  <h2>Blocks </h2>
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-3">
+      <h2> 1. Defer Block <p class="code">defer</p>
+      </h2>
       <div class="flex-container">
-        @for (item of this.cardList;track item.title) { @defer (on hover){
-
-        <app-product-details
-          [item]="item"
-          class="flex-item"
-        ></app-product-details>
-
-        } @placeholder {
-        <mat-card class="example-card" style="width: 320px; height: 100px">
-        </mat-card>
-
-        }}
+        @defer (){
+        <app-product-details class="flex-item"></app-product-details>
+        }
       </div>
+    </div>
+    <div class="col-lg-3">
+      <h2> 2. Defer Block Placeholder
+        <p class="code">placeholder</p>
+
+      </h2>
+      <div class="flex-container">
+        @defer {
+        <app-product-details class="flex-item"></app-product-details>
+
+        } @placeholder (minimum 3000ms) {
+        <div class="card-placeholder">
+          <p>Placeholder content</p>
+        </div>
+        }
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <h2> 3. Defer Block loading
+        <p class="code">loading</p>
+
+
+      </h2>
+      <div class="flex-container">
+        @defer {
+        <app-product-details class="flex-item"></app-product-details>
+        }
+        @loading (after 10ms; minimum 2s) {
+        <img alt="loading..." src="/assets/img/loading.gif" style="width: 320px;
+          object-fit: cover;
+          box-shadow: 1px 1px 5px 1px #aaa;
+          border-radius: 4px;
+          margin: 5px;
+          height: 480px;" />
+        }
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <h2> 4. Defer Block error
+        <p class="code">error</p>
+
+
+      </h2>
+      <div class="flex-container">
+
+        @defer (when isCheckedDefer()) {
+        <app-product-details class="flex-item"></app-product-details>
+        }
+
+        @error {
+        <span>Error Error Not Found</span>
+        }
+
+
+      </div>
+    </div>
+  </div>
+  <hr>
+  <h2> Triggers Type</h2>
+  <div class="row">
+    <div class="col-lg-3">
+      <h4> On </h4>
+      @defer (on timer(2s)) {
+      <app-product-details class="flex-item"></app-product-details>
+
+      } @placeholder {
+      <div class="card-placeholder">
+        <p>Placeholder content</p>
+      </div>
+      }
+    </div>
+    <div class="col-lg-3">
+      <h4> When </h4>
+
+      @defer (when isView() ) {
+      <app-product-details class="flex-item"></app-product-details>
+      } @placeholder {
+      <div class="card-placeholder">
+        <p>Placeholder content</p>
+      </div>
+      }
+
+    </div>
+  </div>
+  <h2> Triggers on Event</h2>
+  <div class="row">
+    <div class="col-lg-3">
+      <p> on viewport </p>
+      <div #viewInit class="on-all">
+        viewInit
+
+      </div>
+      @defer (on viewport(viewInit)) {
+      <app-product-details class="flex-item"></app-product-details>
+      }
+
+    </div>
+    <div class="col-lg-3">
+      <p> When Condtion True </p>
+      <div class="on-all">
+        <button class="btn btn-primary" (click)="isView.set(true)"> Click show {{isView()}} </button>
+      </div>
+
+      @defer (when isView() ) {
+      <app-product-details class="flex-item"></app-product-details>
+      } @placeholder {
+      <div class="card-placeholder">
+        <p>Placeholder content</p>
+      </div>
+      }
+
+    </div>
+    <div class="col-lg-3">
+      <p> 3. on interaction </p>
+      <div class="on-all">
+        <p> click Placeholder content</p>
+      </div>
+
+      @defer (on interaction) {
+      <app-product-details class="flex-item"></app-product-details>
+      } @placeholder {
+      <div class="card-placeholder">
+        <p>Placeholder content</p>
+      </div>
+      }
+    </div>
+    <div class="col-lg-3">
+      <p> 4. on hover </p>
+      <div class="on-all">
+        <p> Hover Placeholder content</p>
+      </div>
+
+      @defer (on hover) {
+      <app-product-details class="flex-item"></app-product-details>
+      } @placeholder {
+      <div class="card-placeholder">
+        <p>Placeholder content</p>
+      </div>
+      }
+
+    </div>
+    <div class="col-lg-3">
+      <p> 5. on immediate </p>
+      <div class="on-all">
+        <p> immediate </p>
+      </div>
+
+      @defer (on immediate) {
+      <app-product-details class="flex-item"></app-product-details>
+      } @placeholder {
+      <div class="card-placeholder">
+        <p>Placeholder content</p>
+      </div>
+      }
+
+    </div>
+    <div class="col-lg-3">
+      <p> 6. on timer </p>
+      <div class="on-all">
+        <p> timer(5000ms)</p>
+      </div>
+
+      @defer (on timer(5000ms)) {
+      <app-product-details class="flex-item"></app-product-details>
+      } @placeholder {
+      <div class="card-placeholder">
+        <p>Placeholder content</p>
+      </div>
+      }
+
     </div>
   </div>
 </div>

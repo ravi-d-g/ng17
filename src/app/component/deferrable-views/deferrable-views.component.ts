@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MaterialModule } from '../../material.module';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
 
@@ -10,6 +10,10 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
   styleUrl: './deferrable-views.component.scss',
 })
 export class DeferrableViewsComponent {
+
+  isCheckedDefer = signal(false);
+  isView = signal(false);
+  isTrue: boolean = false;
   cardList = [
     {
       userImage: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
