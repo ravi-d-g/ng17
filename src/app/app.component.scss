@@ -33,3 +33,7 @@ a.link {
     text-decoration: none;
     color: black;
 }
+
+.code::before {
+    content: '@';
+}

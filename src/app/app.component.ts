@@ -32,29 +32,29 @@ export class AppComponent {
   folders: Section[] = [
     {
       name: 'Day 1 (Deferrable Views)',
-      updated: new Date('12/10/2023'),
+      updated: new Date('12/18/2023'),
       routerLink: '/deferrable-views',
     },
     {
       name: 'Day 2 (Built-in Control Flow)',
       updated: new Date('12/10/2023'),
-      routerLink: '/deferrable-views',
+      routerLink: '/built-in-control-flow',
     }, {
       name: 'Day 3 (Improved Performance)',
       updated: new Date('12/10/2023'),
-      routerLink: '/deferrable-views',
+      routerLink: '/test',
     }, {
       name: 'Day 4 (Fresh New Look)',
       updated: new Date('12/10/2023'),
-      routerLink: '/deferrable-views',
+      routerLink: '/test',
     }, {
       name: 'Day 5 (Interactive Learning Journey)',
       updated: new Date('12/10/2023'),
-      routerLink: '/deferrable-views',
+      routerLink: '/test',
     }, {
       name: 'Day 6 (Other Noteworthy Changes)',
       updated: new Date('12/10/2023'),
-      routerLink: '/deferrable-views',
+      routerLink: '/test',
     },
   ];
   notes: Section[] = [
