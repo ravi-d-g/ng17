@@ -18,4 +18,6 @@ export class BuiltInControlFlowComponent {
     { name: 'Vaibhav', id: 4 },
     { name: 'Rahul', id: 5 },
   ]
+
+  isEditable = true
 }

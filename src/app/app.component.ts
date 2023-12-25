@@ -37,24 +37,33 @@ export class AppComponent {
     },
     {
       name: 'Day 2 (Built-in Control Flow)',
-      updated: new Date('12/10/2023'),
+      updated: new Date('12/18/2023'),
       routerLink: '/built-in-control-flow',
-    }, {
+    },
+    {
       name: 'Day 3 (Improved Performance)',
       updated: new Date('12/10/2023'),
       routerLink: '/test',
-    }, {
+    },
+    {
       name: 'Day 4 (Fresh New Look)',
-      updated: new Date('12/10/2023'),
-      routerLink: '/test',
-    }, {
+      updated: new Date('12/18/2023'),
+      routerLink: '/fresh-new-look',
+    },
+    {
       name: 'Day 5 (Interactive Learning Journey)',
       updated: new Date('12/10/2023'),
       routerLink: '/test',
-    }, {
+    },
+    {
       name: 'Day 6 (Other Noteworthy Changes)',
       updated: new Date('12/10/2023'),
       routerLink: '/test',
+    },
+    {
+      name: 'Ng-16',
+      updated: new Date('12/25/2023'),
+      routerLink: '/ng16',
     },
   ];
   notes: Section[] = [
