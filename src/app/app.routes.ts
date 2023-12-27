@@ -6,6 +6,7 @@ import { BuiltInControlFlowComponent } from './component/built-in-control-flow/b
 import { FreshNewLookComponent } from './component/fresh-new-look/fresh-new-look.component';
 import { SignalsComponent } from './component/signals/signals.component';
 import { Ng16Component } from './component/ng-16/ng-16.component';
+import { TodoComponent } from './component/todo/todo.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -13,6 +14,7 @@ export const routes: Routes = [
   { path: 'built-in-control-flow', component: BuiltInControlFlowComponent },
   { path: 'fresh-new-look', component: FreshNewLookComponent },
   { path: 'ng16', component: Ng16Component },
+  { path: 'todo', component: TodoComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

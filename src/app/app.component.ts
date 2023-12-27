@@ -65,6 +65,11 @@ export class AppComponent {
       updated: new Date('12/25/2023'),
       routerLink: '/ng16',
     },
+    {
+      name: 'TO DO List',
+      updated: new Date('12/27/2023'),
+      routerLink: '/todo',
+    },
   ];
   notes: Section[] = [
     {

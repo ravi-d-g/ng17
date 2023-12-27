@@ -35,3 +35,7 @@ live : https://developerravi08.github.io/ng17/
 ## Command to create build
 
 ng build --configuration production --base-href="https://developerravi08.github.io/ng17/"
+
+Icons : https://www.flaticon.com/
+
+Interview : TODO List
