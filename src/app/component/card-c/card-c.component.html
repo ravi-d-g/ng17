@@ -1,0 +1,17 @@
+<div class="container-xl  ">
+    <h1 class="mt-3"> Card child</h1>
+    <hr>
+
+    <br>
+    <ng-container [ngTemplateOutlet]="temp" [ngTemplateOutletContext]="{ data: data }"></ng-container>
+
+    <br>
+    <ng-container [ngTemplateOutlet]="temp2"
+        [ngTemplateOutletContext]="{ data: 'Its a pretty template' }"></ng-container>
+
+    <br>
+
+    <ng-content select="h4"></ng-content>
+    <p>Blah Blah Blah in between the projected content……</p>
+    <ng-content select="button"></ng-content>
+</div>

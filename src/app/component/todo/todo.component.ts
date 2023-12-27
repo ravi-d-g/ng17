@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { BreadcrumbComponent } from '../breadcrumb/breadcrumb.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-todo',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BreadcrumbComponent, RouterModule],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss',
 })

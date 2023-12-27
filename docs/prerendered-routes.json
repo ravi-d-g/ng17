@@ -1,9 +1,11 @@
 {
   "routes": [
     "/built-in-control-flow",
+    "/card-p",
     "/deferrable-views",
     "/fresh-new-look",
     "/home",
+    "/interview",
     "/ng16",
     "/todo"
   ]

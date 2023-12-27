@@ -1,0 +1,76 @@
+<div class="container-xl  " style="height: 100vh;">
+
+
+    <app-breadcrumb>
+        <ng-template #page2>
+            <li class="breadcrumb-item " aria-current="page">
+                <a class="link" [routerLink]="'/card-p'" routerLinkActive="active" ariaCurrentWhenActive="page">
+                    card-p
+                </a>
+            </li>
+        </ng-template>
+    </app-breadcrumb>
+    <h1 class="mt-3">Card Parent </h1>
+    <hr>
+    <ng-template #temp>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-body">
+                    <h2> Parent Card</h2>
+                    <p> Testing</p>
+                </div>
+            </div>
+
+        </div>
+    </ng-template>
+    <h2>
+        Method 1: Passing the template to the ChildA Component using Input() Property
+        Binding
+    </h2>
+    <app-card-c [temp]="temp"></app-card-c>
+
+
+
+    <hr>
+    <h2>
+        Method 2: Passing the template to the ChildB Component using Content
+        Projection and ng-template
+    </h2>
+
+    <app-card-c>
+        <ng-template #temp2 let-data="data">
+
+            <div class="card">
+                <div class="card-body">
+                    <h2> Parent Card</h2>
+                    <p>
+                        Accessing template containing data in <b>bold</b> using ngTemplateOutlet.
+                        testing Data
+                        <b>{{ data }}</b>
+                    </p>
+                </div>
+            </div>
+
+
+        </ng-template>
+    </app-card-c>
+
+
+
+    <h2>
+        Method 3: Passing the template to the ChildB Component using Content
+        Projection and ng-content
+    </h2>
+
+    <div class="card">
+        <div class="card-body">
+            <app-card-c>
+
+
+                <h4>Its a header</h4>
+                <button class="btn btn-primary">Its a button</button>
+
+            </app-card-c>
+        </div>
+    </div>
+</div>

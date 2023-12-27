@@ -7,6 +7,8 @@ import { FreshNewLookComponent } from './component/fresh-new-look/fresh-new-look
 import { SignalsComponent } from './component/signals/signals.component';
 import { Ng16Component } from './component/ng-16/ng-16.component';
 import { TodoComponent } from './component/todo/todo.component';
+import { CardPComponent } from './component/card-p/card-p.component';
+import { InterviewQComponent } from './component/interview-q/interview-q.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -14,7 +16,10 @@ export const routes: Routes = [
   { path: 'built-in-control-flow', component: BuiltInControlFlowComponent },
   { path: 'fresh-new-look', component: FreshNewLookComponent },
   { path: 'ng16', component: Ng16Component },
+  { path: 'interview', component: InterviewQComponent },
+
   { path: 'todo', component: TodoComponent },
+  { path: 'card-p', component: CardPComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

@@ -66,9 +66,19 @@ export class AppComponent {
       routerLink: '/ng16',
     },
     {
+      name: 'Interview Q',
+      updated: new Date('12/25/2023'),
+      routerLink: '/interview',
+    },
+    {
       name: 'TO DO List',
       updated: new Date('12/27/2023'),
       routerLink: '/todo',
+    },
+    {
+      name: 'Card-P',
+      updated: new Date('12/27/2023'),
+      routerLink: '/card-p',
     },
   ];
   notes: Section[] = [
