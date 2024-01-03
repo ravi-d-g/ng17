@@ -80,6 +80,11 @@ export class AppComponent {
       updated: new Date('12/27/2023'),
       routerLink: '/card-p',
     },
+    {
+      name: 'ES6',
+      updated: new Date('01/03/2024'),
+      routerLink: '/es6',
+    },
   ];
   notes: Section[] = [
     {

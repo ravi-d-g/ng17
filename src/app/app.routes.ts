@@ -9,6 +9,7 @@ import { Ng16Component } from './component/ng-16/ng-16.component';
 import { TodoComponent } from './component/todo/todo.component';
 import { CardPComponent } from './component/card-p/card-p.component';
 import { InterviewQComponent } from './component/interview-q/interview-q.component';
+import { Es6Component } from './component/es6/es6.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -17,9 +18,10 @@ export const routes: Routes = [
   { path: 'fresh-new-look', component: FreshNewLookComponent },
   { path: 'ng16', component: Ng16Component },
   { path: 'interview', component: InterviewQComponent },
-
   { path: 'todo', component: TodoComponent },
   { path: 'card-p', component: CardPComponent },
+  { path: 'es6', component: Es6Component },
+
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
