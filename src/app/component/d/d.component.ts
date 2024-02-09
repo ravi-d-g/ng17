@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { YService } from '../y.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { YService } from '../../y.service';
 
 @Component({
   selector: 'app-d',

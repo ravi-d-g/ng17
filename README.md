@@ -30,12 +30,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Add Project"# ng17"
 
-live : https://developerravi08.github.io/ng17/
+live : <https://ravi-d-g.github.io/ng17/>
 
 ## Command to create build
 
-ng build --configuration production --base-href="https://developerravi08.github.io/ng17/"
+ng build --configuration production --base-href="<https://ravi-d-g.github.io/ng17/>"
 
-Icons : https://www.flaticon.com/
+Icons : <https://www.flaticon.com/>
 
 Interview : TODO List
