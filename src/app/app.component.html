@@ -1,0 +1,43 @@
+<div class="main-container">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+      (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>
+      <a routerLink="/home" style="text-decoration: none; color: #fff;">Angular 17
+      </a>
+
+    </span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <mat-list>
+        <div mat-subheader>Folders</div>
+        @for (folder of folders; track folder) {
+        <mat-list-item>
+          <mat-icon matListItemIcon>folder</mat-icon>
+          <div matListItemTitle>
+            <a class="link" [routerLink]="folder.routerLink" routerLinkActive="active" ariaCurrentWhenActive="page">
+              {{ folder.name }}
+            </a>
+          </div>
+          <div matListItemLine>{{ folder.updated | date }}</div>
+        </mat-list-item>
+        }
+      </mat-list>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container>
+</div>

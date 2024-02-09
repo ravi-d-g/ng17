@@ -1,0 +1,66 @@
+<div class="container-xl">
+
+    <app-breadcrumb>
+        <ng-template #page2>
+            <li class="breadcrumb-item " aria-current="page">
+                <a class="link" [routerLink]="'/todo'" routerLinkActive="active" ariaCurrentWhenActive="page">
+                    todo
+                </a>
+            </li>
+        </ng-template>
+    </app-breadcrumb>
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="card">
+                <div class="body pt-3 ">
+                    <h2> TO DO List </h2>
+                    <div style="display: flex; justify-content: space-between">
+                        <div class="col m-1">
+                            <input class="form-control" type="text" value="Task 1" placeholder="Title" #input1>
+                        </div>
+                        <div class="col m-1">
+                            <input class="form-control" type="text" value="desc " placeholder="Desc" #intput2>
+                        </div>
+                        <div class="m-1">
+                            <button class="btn btn-primary" (click)="addItem(input1.value,intput2.value)">
+                                <i class="bi bi-plus-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="body list-body">
+                    <ol>
+                        @for (item of todoList; track item.title) {
+                        <li>
+                            <div class="row">
+                                <div class="col-lg-10 pb-2">
+                                    <p> {{item.title}}</p>
+                                    <span [ngClass]="{'is-checked': item.isChecked}">
+                                        {{item.desc}}
+                                    </span>
+                                </div>
+                                <div class="col d-flex justify-content-end align-items-center">
+                                    <span class="btn btn-success" (click)="compliteItem(item)">
+                                        <i class="bi bi-check"></i>
+                                    </span>
+                                    <span class="btn btn-danger" (click)="removeItem(item)">
+                                        <i class="bi bi-trash"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        }
+                        @empty {
+                        <div>
+                            Empty list of items
+                        </div>
+                        }
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

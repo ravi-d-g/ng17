@@ -1,0 +1,18 @@
+<div class="container-xl">
+
+    <app-breadcrumb>
+        <ng-template #page2>
+            <li class="breadcrumb-item " aria-current="page">
+                <a class="link" [routerLink]="'/test-2'" routerLinkActive="active" ariaCurrentWhenActive="page">
+                    P to C bgcolor change
+                </a>
+            </li>
+        </ng-template>
+    </app-breadcrumb>
+    <p>c-1 works!</p>
+
+
+    <input type="text" [(ngModel)]="color">
+
+    <app-c-2 [bgColor]="color"></app-c-2>
+</div>

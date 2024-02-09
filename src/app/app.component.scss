@@ -1,0 +1,51 @@
+.main-container {
+    height: 100vh;
+}
+
+.example-container {
+    height: 93vh;
+}
+
+.example-sidenav {
+    padding: 0px 0px 0px 20px;
+}
+
+.example-sidenav-content {
+    height: 80vh;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    margin: 5px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+a.link.active {
+    color: blue;
+}
+
+a.link {
+    text-decoration: none;
+    color: black;
+}
+
+.code::before {
+    content: '@';
+}
+
+.mdc-list-item--with-leading-icon .mdc-list-item__start {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.mat-mdc-list-item.mdc-list-item--with-leading-avatar.mdc-list-item--with-two-lines,
+.mat-mdc-list-item.mdc-list-item--with-leading-checkbox.mdc-list-item--with-two-lines,
+.mat-mdc-list-item.mdc-list-item--with-leading-icon.mdc-list-item--with-two-lines {
+    height: 64px;
+}

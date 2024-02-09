@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/built-in-control-flow",
+    "/card-p",
+    "/deferrable-views",
+    "/es6",
+    "/fresh-new-look",
+    "/home",
+    "/interview",
+    "/ng16",
+    "/todo"
+  ]
+}

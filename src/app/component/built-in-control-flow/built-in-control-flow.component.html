@@ -1,0 +1,120 @@
+<div class="container-xl">
+    <h1 class="mt-3"> Built-in control flow </h1>
+    <hr>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <h2>
+                Conditional statements
+
+            </h2>
+            <p> <span class="code">if</span>,
+                <span class="code">else if</span>,
+                <span class="code">else</span>
+            </p>
+            <button class="btn btn-primary " (click)="loggedIn = !loggedIn">
+                Click to @if (loggedIn) {
+                logout
+                }
+                @else {
+                login
+                }
+
+            </button>
+            @if (loggedIn) {
+
+            <div class="card mt-3">
+                <div class="card-body">
+
+                    <p> Login Card</p>
+                    <p> The user is logged in</p>
+                </div>
+            </div>
+
+            } @else {
+
+            <div class="card mt-3">
+                <div class="card-body">
+
+                    <p> Log out Card</p>
+                    <p> The user is not logged in</p>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="col-lg-4">
+            <h2>
+                block - selection
+            </h2>
+            <p>
+                <span class="code"> switch </span> ,
+                <span class="code"> case </span>,
+                <span class="code"> default </span>
+            </p>
+            <button class="btn btn-sm btn-primary m-1" (click)="accessLevel='admin'"> admin</button>
+            <button class="btn btn-sm btn-primary m-1" (click)="accessLevel='moderator'"> moderator</button>
+            <button class="btn btn-sm btn-primary m-1" (click)="accessLevel='Default'"> Default</button>
+
+            <div class="mt-3">
+                @switch (accessLevel) {
+                @case ('admin') {
+
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Admin Card</h2>
+
+                    </div>
+                </div>
+                }
+                @case ('moderator') {
+                <div class="card">
+                    <div class="card-body">
+                        <h2>moderator Card</h2>
+
+
+                    </div>
+                </div>}
+                @default {
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Default Card</h2>
+
+
+                    </div>
+                </div>
+                }
+                }
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <h2>Built-in for loop
+
+
+
+            </h2>
+            <p> <span class="code">for</span>,
+                <span class="code">empty</span>
+            </p>
+            <button class="btn btn-sm btn-primary m-1" (click)="users=[]"> List Empty </button>
+            <ol>
+                @for (user of users; track user.id) {
+                <li>
+                    {{ user.name }}
+                </li>
+                }
+                @empty {
+                Empty list of users
+                }
+            </ol>
+
+            <br>
+            ---
+            <div [contentEditable]="isEditable"></div>
+
+            ---
+            <br>
+
+
+        </div>
+    </div>
+</div>

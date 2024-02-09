@@ -1,0 +1,15 @@
+<div class="my-3">
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a class="link" [routerLink]="'/interview'" routerLinkActive="active" ariaCurrentWhenActive="page">
+                    Interview
+                </a>
+            </li>
+
+            <ng-container [ngTemplateOutlet]="page2"></ng-container>
+
+        </ol>
+    </nav>
+    <hr>
+</div>

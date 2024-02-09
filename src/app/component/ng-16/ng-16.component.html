@@ -1,0 +1,198 @@
+<div class="container-xxl">
+    <h1 class="m-3">ng-16</h1>
+    <div class="row">
+        <div class="col-lg my-1">
+            <div class="card">
+
+
+                <div class="card-body">
+                    <h3 class="card-title">1. Angular Signals</h3>
+                    <p class="card-text">
+                        Angular Signals is the main feature developers have been waiting for since the Angular 16
+                        roadmap
+                        was
+                        released. Although Solid.js inspired this concept, it is a whole new concept for Angular. It
+                        allows
+                        you
+                        to define reactive values and express dependencies between them. In other words, you can
+                        efficiently
+                        use
+                        Angular signals to manage state changes within Angular applications.
+                    </p>
+                    <p>
+                        A signal can be recognized as a regular variable that users can synchronously access. But it
+                        comes
+                        with
+                        some additional features like notifying others (component templates, other signals, functions,
+                        etc.)
+                        of
+                        its value changes and creating a derived state in a declarative way.</p>
+
+                    <p>
+                        {{ fullName() }} <br>
+                        <button class="btn btn-primary" (click)="setName('John')">Click Change Full Name</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg my-1">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">2. Server-Side Rendering</h3>
+                    <p class="card-text">
+                        The lack of server-side rendering (SSR) support was one of the most significant drawbacks of
+                        Angular
+                        compared to React. Angular 16 has resolved this issue with some significant improvements for
+                        server-side
+                        rendering.
+                    </p>
+                    <p>
+                        Before, Angular used destructive hydration for SSR. In destructive hydration, the server first
+                        renders
+                        and loads the application to the browser. Then, when the client app gets downloaded and
+                        bootstrapped, it
+                        destroys the already rendered DOM and re-renders the client app from scratch. This approach
+                        caused
+                        significant UX issues, like screen flickering, and negatively impacted some Core Web Vitals such
+                        as
+                        LCP
+                        or CLS.anug.
+                    </p>
+                    <p>
+                        Angular 16 introduces a new approach called non-destructive hydration to prevent these
+                        drawbacks.
+                        The
+                        DOM is not destroyed when the client app is downloaded and bootstrapped. It uses the same DOM
+                        while
+                        enriching it with client-side features like event listeners.
+                    </p>
+                    <p>
+                        Non-destructive hydration is still at the developer preview stage. But you can enable it by
+                        adding
+                        provideClientHydration() as a provider when bootstrapping the application.
+                    </p>
+                    <pre>
+                <code [innerHTML]="code"></code>
+              </pre>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg my-1">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">3. Experimental Jest Support</h3>
+                    <p class="card-text">
+                        Jest is one of the most-used testing frameworks among JavaScript developers. Angular has
+                        listened to
+                        developer requests and has introduced experimental Jest support with Angular 16.
+                    </p>
+                    <p>
+                        All you have to do is install Jest using npm and update the angular.json file.
+                    </p>
+
+                    <pre>
+                <code [innerHTML]="JestCode"></code>
+              </pre>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg my-1">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">3. esbuild-Based Build System</h3>
+                    <p class="card-text">
+                        Angular 16 introduces an esbuild-based build system for the development server (ng serve). Vite
+                        powers
+                        this new development server and uses esbuild to build artifacts.
+
+                    </p>
+                    <p>
+                        This is still at the developer preview stage, but you can enable it by updating the angular.json
+                        file
+                        with the following.
+
+                    </p>
+
+                    <pre>
+                <code [innerHTML]="esbuildCode"></code>
+              </pre>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg my-1">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">5. Required Inputs</h3>
+                    <p class="card-text">
+
+                        In Angular 16, you can now define input values as required. You can either use the
+                        <span class="code">Input</span> decorator or the <span class="code"> Component </span>
+                        decorator inputs array to define one.
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <app-input-required [name]="fullName()"> </app-input-required>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg my-1">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">6. Router Inputs</h3>
+                    <p class="card-text">
+
+
+                        Angular 16 allows you to bind route parameters into component inputs, removing the need to
+                        inject ActivatedRoute into the components. To enable this feature, you must import RouterModule
+                        and enable the bindToComponentInputs property in the app.module.ts file.
+                    </p>
+
+                    <pre>
+                        <code [innerHTML]="spsCode"></code>
+                    </pre>
+
+                    <p>The following example shows how we can bind query params to component inputs.</p>
+                    <pre>
+                        <code [innerHTML]="spsCode"></code>
+                    </pre>
+
+                    <p>
+                        Now, when you navigate to the articles route, you can pass query params using the name of the
+                        component input. In this case, an example URL will look like the following.
+                    </p>
+                    <pre>
+                        <code [innerHTML]="spsCode"></code>
+                    </pre>
+                    <p>If the input name is too long, you can rename the query parameter.</p>
+                    <pre>
+                        <code [innerHTML]="spsCode"></code>
+                    </pre>
+                    <p>You can also use this approach to bind path parameters and route data.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg my-1">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">7. Standalone Project Support </h3>
+                    <p class="card-text">
+                        Angular 14 started supporting standalone components, which are independent of modules. Angular
+                        16 takes this to the next level by supporting standalone project creation.
+                    </p>
+                    <p>
+                        Angular 16 has a flag to create a standalone project through the Angular CLI. You have to
+                        execute ng new command with the –standalone flag. Then, it will generate a project without
+                        NgModules.
+                    </p>
+                    <pre>
+                        <code [innerHTML]="spsCode"></code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

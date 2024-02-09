@@ -1,0 +1,19 @@
+span.btn {
+    margin: 5px;
+    font-weight: 600;
+}
+
+.list-body>li {
+    border-bottom: 1px solid #aaa;
+}
+
+.is-checked {
+    text-decoration: line-through;
+}
+
+.list-body {
+    height: 60vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 1rem;
+}
