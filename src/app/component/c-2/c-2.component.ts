@@ -18,6 +18,5 @@ export class C2Component {
 
 
   constructor() {
-    console.log('this.color ==>', this.bgColor)
   }
 }

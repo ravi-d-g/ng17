@@ -15,7 +15,6 @@ export class DComponent {
 
   constructor(private yService: YService) {
     this.yService.getData().subscribe(resp => {
-      console.log('resp ===>', resp)
     })
 
   }
