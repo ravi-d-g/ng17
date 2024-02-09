@@ -11,9 +11,9 @@ import { CardPComponent } from './component/card-p/card-p.component';
 import { InterviewQComponent } from './component/interview-q/interview-q.component';
 import { Es6Component } from './component/es6/es6.component';
 import { RxJsComponent } from './component/rx-js/rx-js.component';
-import { DComponent } from './d/d.component';
 import { C1Component } from './component/c-1/c-1.component';
 import { TColorComponent } from './component/t-color/t-color.component';
+import { DComponent } from './component/d/d.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomePageComponent },
